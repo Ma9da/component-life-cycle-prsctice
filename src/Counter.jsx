@@ -29,6 +29,10 @@ class Counter extends Component {
     componentDidUpdate(pervProps, prevState, snapShot) {
         console.log("component did update ", this.state.counter);
     }
+    componentWillUnmount() {
+        console.log("component will unmount");
+        console.log("================");
+    }
 }
 
 export default Counter;
