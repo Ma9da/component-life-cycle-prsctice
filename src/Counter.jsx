@@ -29,6 +29,14 @@ class Counter extends Component {
     componentDidUpdate(pervProps, prevState, snapShot) {
         console.log("component did update ", this.state.counter);
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextProps.ignoreProp && this.props.ignoreProp !== nextProps.ignoreProp) {
+            console.log("should component update - DO NOT RENDER");
+            return false
+        }
+        console.log("should component update -RENDER");
+        return true
+    }
     componentWillUnmount() {
         console.log("component will unmount");
         console.log("================");
